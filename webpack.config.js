@@ -24,7 +24,7 @@ module.exports = {
         loaders: ["style", "css", "sass"]
       },
       { test: /\.css$/, loader: "style!css" },
-      { test: /\.png$/, loader: 'url-loader?limit=10240' }
+      { test: /\.png|svg$/, loader: 'url-loader?limit=10240' }
     ]
   },
   plugins: [
