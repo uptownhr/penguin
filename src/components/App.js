@@ -4,16 +4,16 @@ import fullpage from 'fullpage.js'
 
 import './main.css'
 
-import background from './background.svg'
+import background1 from './background1.svg'
 import background2 from './background2.svg'
-import background3 from './background.svg'
+import background3 from './background3.svg'
 import background4 from './background.svg'
 
 class App extends React.Component{
   constructor(){
     super()
     this.sections = [{
-      background: background,
+      background: background1,
       name: 'first'
     }, {
       background: background2,
