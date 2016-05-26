@@ -1,33 +1,53 @@
 import React from 'react'
 import $ from 'jquery'
 import fullpage from 'fullpage.js'
+
 import './main.css'
+
 import background from './background.svg'
+import background2 from './background2.svg'
+import background3 from './background.svg'
+import background4 from './background.svg'
 
 class App extends React.Component{
   constructor(){
     super()
-    this.state = {
-      text: 'asdf'
-    }
+    this.sections = [{
+      background: background,
+      name: 'first'
+    }, {
+      background: background2,
+      name: 'second'
+    }, {
+      background: background3,
+      name: 'third'
+    }, {
+      background: background4,
+      name: 'fourth'
+    }]
   }
 
   componentDidMount(){
-    $(this.refs.fullpage).fullpage()
-    setTimeout( function(){
-      this.setState({
-        text: 'tumadre'
-      })
-    }.bind(this), 1000)
+    $(this.refs.fullpage).fullpage({
+      menu: '#menu'
+    })
   }
 
   render(){
+    const sections = this.sections
+
     return (
-      <div ref="fullpage">
-        <div className="section" style={{backgroundSize: 'cover', backgroundImage: 'url(' + background + ')'}}>{this.state.text}</div>
-        <div className="section">Some section</div>
-        <div className="section">Some section</div>
-        <div className="section">Some section</div>
+      <div>
+        <ul id="menu">
+          {sections.map( section => (
+            <li key={section.name}><a href={`#${section.name}`}>{section.name}</a></li>
+          ))}
+        </ul>
+        <div ref="fullpage">
+          {sections.map( section => (
+            <div data-anchor={section.name} key={section.name} className="section" style={{backgroundSize: 'cover', backgroundImage: 'url(' + section.background + ')'}}>{section.name}</div>
+          ))}
+        </div>
       </div>
     )
   }
