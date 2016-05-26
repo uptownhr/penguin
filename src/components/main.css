@@ -1,6 +1,27 @@
+@font-face {
+    font-family: "HelveticaNeueBold";
+    src: url('./HelveticaNeue-Bold.otf');
+}
+
+@font-face {
+    font-family: "HelveticaNeueLight";
+    src: url('./HelveticaNeue-Light.otf');
+}
+
+@font-face {
+    font-family: "HelveticaNeue";
+    src: url('./HelveticaNeue.otf');
+}
+
+html{
+    font-size: 62.5%;
+}
+
 body{
+    font-family: "HelveticaNeueBold";
     margin: 0;
     color: white;
+    font-weight: 500;
 }
 
 #menu{
@@ -8,9 +29,24 @@ body{
     top:0;
     left:0;
     z-index: 99;
+    font-size: 1.6rem;
+    list-style: none;
+}
+
+#menu li{
+    font-size: 1.5rem;
 }
 
 a:link, a:visited{
     color: white;
     text-decoration: none;
+}
+
+.section {
+    text-align: center;
+}
+
+.section p {
+    text-align: center;
+    font-family: "HelveticaNeueLight";
 }

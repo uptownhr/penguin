@@ -7,14 +7,15 @@ import './main.css'
 import background1 from './background1.svg'
 import background2 from './background2.svg'
 import background3 from './background3.svg'
-import background4 from './background.svg'
+import background4 from './background4.svg'
+import background5 from './background.svg'
 
 class App extends React.Component{
   constructor(){
     super()
     this.sections = [{
       background: background1,
-      name: 'first'
+      name: 'MEDIA'
     }, {
       background: background2,
       name: 'second'
@@ -24,6 +25,9 @@ class App extends React.Component{
     }, {
       background: background4,
       name: 'fourth'
+    }, {
+      background: background5,
+      name: 'fifth'
     }]
   }
 
@@ -45,7 +49,9 @@ class App extends React.Component{
         </ul>
         <div ref="fullpage">
           {sections.map( section => (
-            <div data-anchor={section.name} key={section.name} className="section" style={{backgroundSize: 'cover', backgroundImage: 'url(' + section.background + ')'}}>{section.name}</div>
+            <div data-anchor={section.name} key={section.name} className="section" style={{backgroundSize: 'cover', backgroundImage: 'url(' + section.background + ')'}}>
+              {section.name}
+            </div>
           ))}
         </div>
       </div>

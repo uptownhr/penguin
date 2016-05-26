@@ -19,12 +19,11 @@ module.exports = {
         test: /\.js$/,
         loaders: ['react-hot', 'babel'],
         include: path.join(__dirname, 'src')
-      },{
-        test: /\.scss$/,
-        loaders: ["style", "css", "sass"]
       },
+      { test: /\.scss$/, loaders: ["style", "css", "sass"] },
       { test: /\.css$/, loader: "style!css" },
-      { test: /\.png|svg$/, loader: 'url-loader?limit=10240' }
+      { test: /\.png|svg$/, loader: 'url-loader?limit=1024' },
+      { test: /\.(otf|eot|ttf|woff|woff2)$/, loader: 'file' }
     ]
   },
   plugins: [
