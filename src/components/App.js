@@ -1,6 +1,4 @@
 import React from 'react'
-import $ from 'jquery'
-import fullpage from 'fullpage.js'
 
 import './main.css'
 
@@ -14,12 +12,8 @@ import redButt from '../resources/redButt.jpg'
 import wannaFanta from '../resources/wannaFanta.png'
 
 class App extends React.Component{
-
-
   componentDidMount(){
-    $(this.refs.fullpage).fullpage({
-      menu: '#menu'
-    })
+
   }
 
   render(){
@@ -49,7 +43,7 @@ class App extends React.Component{
     }, {
       background: background5,
       name: 'fifth',
-      content: "Remember, remember the fifth of november"
+      content: "Remember, remember the fifth of november",
       type: 'technology'
     }]
 
