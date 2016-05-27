@@ -22,7 +22,7 @@ module.exports = {
       },
       { test: /\.scss$/, loaders: ["style", "css", "sass"] },
       { test: /\.css$/, loader: "style!css" },
-      { test: /\.png|svg$/, loader: 'url-loader?limit=1024' },
+      { test: /\.png|svg|jpg$/, loader: 'url-loader?limit=1024' },
       { test: /\.(otf|eot|ttf|woff|woff2)$/, loader: 'file' }
     ]
   },
