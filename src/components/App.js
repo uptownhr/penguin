@@ -49,7 +49,7 @@ class App extends React.Component{
     }, {
       background: background5,
       name: 'fifth',
-      content: "Remember, remember the fifth of november"
+      content: "Remember, remember the fifth of november",
       type: 'technology'
     }]
 
