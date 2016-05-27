@@ -13,6 +13,31 @@ import penguin from '../resources/logo-white.png'
 import redButt from '../resources/redButt.jpg'
 import wannaFanta from '../resources/wannaFanta.png'
 
+const MenuSection = function(props){
+  let items = props.items.map(item => {
+    return ( <li key={item.name}><a href={`#${item.name}`}>{item.name}</a></li> )
+  })
+
+  return (
+    <ul id="sub-menu"><div class="sub-menu">{props.header}</div>
+      {items}
+    </ul>
+  )
+}
+
+const Item = function(props){
+
+  const item = props.item
+
+  return (<div data-anchor={item.name} key={item.name} className="section" style={{backgroundSize: 'cover', backgroundImage: 'url(' + item.background + ')'}}>
+    <div class="site-container">
+      <img class="site-logo" src={item.logo} alt="show me picture"></img>
+      <h2>tag line: {item.name}</h2>
+      <p>content: {item.content}</p>
+    </div>
+  </div>)
+}
+
 class App extends React.Component{
 
 
@@ -74,32 +99,11 @@ class App extends React.Component{
           <h1>Penguin</h1>
             <br>
               </br>
-            {sections.map( section => {
-              
-              let items = section.items.map(item => {
-                return ( <li key={item.name}><a href={`#${item.name}`}>{item.name}</a></li> )
-              })
-              
-              return (
-                <ul id="sub-menu"><div class="sub-menu">{section.header}</div>
-                  {items}
-                </ul>
-              ) 
-            })}
+            {sections.map( (section,index) => <MenuSection key={index} {...section} />) }
         </ul>
         <div ref="fullpage">
           {sections.map( section => {
-            
-            return (section.items.map( item => (
-              <div data-anchor={item.name} key={item.name} className="section" style={{backgroundSize: 'cover', backgroundImage: 'url(' + item.background + ')'}}>
-                <div class="site-container">
-                  <img class="site-logo" src={item.logo} alt="show me picture"></img>
-                  <h2>tag line: {item.name}</h2>
-                  <p>content: {item.content}</p>
-                </div>
-              </div>
-            )))
-            
+            return (section.items.map( item => <Item item={item} /> ))
           })}
         </div>
       </div>
