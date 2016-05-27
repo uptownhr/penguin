@@ -26,12 +26,16 @@ body{
 
 #menu{
     position: fixed;
-    top:40px;
+    top:10px;
     left:0;
     z-index: 99;
     font-size: 1.6rem;
     list-style: none;
-    padding-left: 0.5rem;
+    padding-left: 5rem;
+}
+
+#menu ul{
+    padding-left: 0rem;
 }
 
 #menu li{
@@ -44,7 +48,7 @@ body{
 }
 
 .fp-tableCell p {
-    font-size: 5rem;
+    font-size: 3rem;
 }
 
 .fp-tableCell h2 {
@@ -57,6 +61,9 @@ body{
     margin-bottom: 100px;
 }
 
+.fp-tableCell img {
+    width: 300px;
+}
 a:link, a:visited{
     color: white;
     text-decoration: none;
