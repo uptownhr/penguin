@@ -10,7 +10,7 @@ import background3 from './background3.svg'
 import background4 from './background4.svg'
 import background5 from './background.svg'
 import penguin from '../resources/penguin.png'
-import redButt from '../resources/redButt.jpg'
+import redButt from '../resources/redButt.png'
 import wannaFanta from '../resources/wannaFanta.png'
 import darkBoy from '../resources/darkBoy.png'
 import grizzly from '../resources/grizzly.png'
@@ -99,8 +99,8 @@ class App extends React.Component{
               <div data-anchor={section.name} key={section.name} className="section" style={{backgroundSize: 'cover', backgroundImage: 'url(' + section.background + ')'}}>
                 <div class="site-container">
                   <img class="site-logo" src={section.logo} alt="show me picture"></img>
-                  <h2>tag line: {section.tag}</h2>
-                  <p>content: {section.content}</p>
+                  <h2>{section.tag}</h2>
+                  <p>{section.content}</p>
                 </div>
               </div> : null
           ))}
