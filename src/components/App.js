@@ -27,31 +27,36 @@ class App extends React.Component{
       background: background1,
       logo: penguin,
       name: 'first',
-      content: "Penguins can fly, in the ocean"
+      content: "Penguins can fly, in the ocean",
+      type: 'media'
     }, {
       background: background2,
       logo: redButt,
       name: 'second',
-      content: "I like big butts and I cannot lie"
+      content: "I like big butts and I cannot lie",
+      type: 'media'
     }, {
       background: background3,
       logo: wannaFanta,
       name: 'third',
-      content: "Wanna Fanta, don't you wanna"
+      content: "Wanna Fanta, don't you wanna",
+      type: 'media'
     }, {
       background: background4,
       name: 'fourth',
-      content: "Forth is the lonliest number"
+      content: "Forth is the lonliest number",
+      type: 'technology'
     }, {
       background: background5,
       name: 'fifth',
       content: "Remember, remember the fifth of november"
+      type: 'technology'
     }]
 
     return (
       <div>
         <ul id="menu">
-          <ul id="sub-menu"><div class="wtf">LIST OF LINKS</div>
+          <ul id="sub-menu"><div class="sub-menu">FIRST SUB-MENU</div>
             <br>
               </br>
             {sections.map( section => (
@@ -63,8 +68,8 @@ class App extends React.Component{
           {sections.map( section => (
             <div data-anchor={section.name} key={section.name} className="section" style={{backgroundSize: 'cover', backgroundImage: 'url(' + section.background + ')'}}>
               <div class="site-container">
-                <img src={section.logo} alt="show me picture"></img>
-                <p>tag line: {section.name}</p>
+                <img class="site-logo" src={section.logo} alt="show me picture"></img>
+                <h2>tag line: {section.name}</h2>
                 <p>content: {section.content}</p>
               </div>
             </div>
