@@ -20,19 +20,25 @@ import darkBoy from '../resources/darkBoy.png'
 import grizzly from '../resources/grizzly.png'
 
 const MenuSection = function(props){
+  let head = props.header;
+  console.log(head);
   let items = props.items.map(item => {
-    return ( <li key={item.name}><div className="sub-menu"><a href={`#${item.name}`}>{item.name}</a></div></li> )
+    if (head != 'ABOUT' && head != 'CONTACT') {
+      return (<li key={item.name}>
+        <div className="sub-menu"><a href={`#${item.name}`}>{item.name}</a></div>
+      </li> )
+    } else {
+      return null;
+    }
   })
-
-  return (
-    <ul id="sub-menu"><div class="sub-menu">{props.header}</div>
-      {items}
-    </ul>
-  )
+    return (
+      <ul id="sub-menu"><div className="header">{props.header}</div>
+        {items}
+      </ul>
+    )
 }
 
 const Item = function(props){
-
   const item = props.item
 
   return (<div data-anchor={item.name} key={item.name} className="section" style={{backgroundSize: 'cover', backgroundImage: 'url(' + item.background + ')'}}>
@@ -49,7 +55,29 @@ class App extends React.Component{
     $(this.refs.fullpage).fullpage({
       menu: '#menu'
     })
+    $(document).ready(function(){
+      $(".header").click(function() {
+        var loc = $(this).text();
+        var arr = loc.split("");
+        var len = loc.length;
+        var loc2 = loc.slice(1);
+        console.log("what is this: ", loc2)
+        var arr2 = loc2.split("");
+        console.log("arr2: ", arr2);
+        arr2 = arr2.map(function(e){
+          return e.toLowerCase();
+        })
+        console.log("this is arr2: ", arr2);
+        loc = loc.charAt(0);
+        console.log("WTF: ", loc);
+        arr2.unshift(loc)
+        loc = "#" + arr2.join("");
+        console.log(loc);
+        window.location.href = loc;
+      })
+    })
   }
+
 
   render(){
     const sections = this.sections = [
@@ -70,19 +98,22 @@ class App extends React.Component{
             logo: stiqr,
             name: 'Stiqr',
             tag: 'Stiq it to the MAN!',
-            content: "Just stiq it!"
+            content: "Just stiq it!",
+            url: "http://www.stiqr.com/"
           }, {
           background: background2,
           logo: startupTabs,
           name: 'Startuptabs',
           tag: 'Listing for Startups',
-          content: "Get the word out about your new Start Up!"
+          content: "Get the word out about your new Start Up!",
+          url: 'http://www.startuptabs.com/'
         }, {
           background: background2,
           logo: amplfy,
           name: 'Amplfy',
           tag: 'Amplfy Your Online Presence',
-          content: "Just another Social Network Platform"
+          content: "Just another Social Network Platform",
+          url: 'https://www.amplfy.me/'
         }]
       },
       {
@@ -93,32 +124,34 @@ class App extends React.Component{
           name: 'Honeybadger',
           tag: "Honeybadger: I don't give a shit!",
           content: "Honeybadger going to rock your world",
-          type: 'media'
+          type: 'media',
+          url: 'https://github.com/jaequery/honeybadger'
         }, {
           background: background4,
           logo: hackable,
           name: 'Hackable',
           tag: 'Hack your way into a development position',
           content: "Development for Dummies",
-          type: 'media'
+          type: 'media',
+          url: 'https://github.com/uptownhr/hackable'
         }]
       },
       {
-        header: 'ABOUT US',
+        header: 'ABOUT',
         items: [{
           background: background5,
           logo: darkBoy,
-          name: 'about us',
+          name: 'About',
           content: "We are LEGEN... wait for it... DAIRY",
           type: 'media'
         }]
       },
       {
-        header: 'CONTACT US',
+        header: 'CONTACT',
         items: [{
           background: background5,
           logo: grizzly,
-          name: 'contact us',
+          name: 'Contact',
           content: "Remember, remember the fifth of november",
           type: 'media'
         }]
@@ -141,7 +174,6 @@ class App extends React.Component{
           })}
         </div>
       </div>
-
     )
   }
 }
