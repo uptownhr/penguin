@@ -10,7 +10,7 @@ class About extends React.Component{
 
     return (
       <div>
-        NotFound
+        NotFound asdf
       </div>
     )
   }

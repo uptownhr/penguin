@@ -1,4 +1,5 @@
 import React from 'react'
+import $ from 'jquery'
 
 import './main.css'
 
@@ -13,7 +14,10 @@ import wannaFanta from '../resources/wannaFanta.png'
 
 class App extends React.Component{
   componentDidMount(){
-
+    const fullpage = require('fullpage.js')
+    $(this.refs.fullpage).fullpage({
+      menu: '#menu'
+    })
   }
 
   render(){
@@ -42,7 +46,7 @@ class App extends React.Component{
       type: 'technology'
     }, {
       background: background5,
-      name: 'fifth',
+      name: 'fiftdh',
       content: "Remember, remember the fifth of november",
       type: 'technology'
     }]
@@ -50,7 +54,7 @@ class App extends React.Component{
     return (
       <div>
         <ul id="menu">
-          <ul id="sub-menu"><div class="sub-menu">FIRST SUB-MENU</div>
+          <ul id="sub-menu"><div className="sub-menu">zzxd</div>
             <br>
               </br>
             {sections.map( section => (
@@ -61,8 +65,8 @@ class App extends React.Component{
         <div ref="fullpage">
           {sections.map( section => (
             <div data-anchor={section.name} key={section.name} className="section" style={{backgroundSize: 'cover', backgroundImage: 'url(' + section.background + ')'}}>
-              <div class="site-container">
-                <img class="site-logo" src={section.logo} alt="show me picture"></img>
+              <div className="site-container">
+                <img className="site-logo" src={section.logo} alt="show me picture"></img>
                 <h2>tag line: {section.name}</h2>
                 <p>content: {section.content}</p>
               </div>

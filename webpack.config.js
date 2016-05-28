@@ -1,6 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
-var root_folder = path.resolve(__dirname, '..')
+var root_folder = path.resolve(__dirname)
 
 module.exports = {
   context: root_folder,
@@ -13,7 +13,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: '/static/'
+    publicPath: 'http://localhost:3000/'
   },
   module: {
     loaders: [
@@ -31,10 +31,7 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin()
   ],
-
-  resolve: {
-    alias: {
-      jquery: "jquery/src/jquery"
-    }
+  proxy: {
+    "*": "http://localhost:9090"
   }
 };
