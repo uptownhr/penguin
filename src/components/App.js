@@ -50,39 +50,61 @@ class App extends React.Component{
   render(){
     const sections = this.sections = [
       {
-        header: 'Marketplace',
+        header: 'Penguin',
+        items:[{
+          background: background1,
+          logo: penguin,
+          name: 'Penguin',
+          content: 'I do not know'
+        }]
+      },
+      {
+        header: 'Startups',
         items: [{
             background: background1,
             logo: penguin,
-            name: 'first',
-            content: "Penguins can fly, in the ocean",
-            type: 'media'
+            name: 'Stiqr',
+            content: "just stiq it"
           }, {
-            background: background2,
-            logo: redButt,
-            name: 'second',
-            content: "I like big butts and I cannot lie",
-            type: 'media'
-          }]
+          background: background2,
+          logo: redButt,
+          name: 'Startuptabs',
+          content: "Startup discovery engine"
+        }, {
+          background: background2,
+          logo: redButt,
+          name: 'Amplfy',
+          content: "Social media amplification"
+        }]
       },
       {
-        header: 'Media',
+        header: 'Opensource',
         items: [{
           background: background3,
           logo: penguin,
-          name: 'third',
+          name: 'Honeybadger',
           content: "Penguins can fly, in the ocean",
           type: 'media'
         }, {
           background: background4,
           logo: redButt,
-          name: 'fourth',
+          name: 'Hackable',
           content: "I like big butts and I cannot lie",
           type: 'media'
         }]
       },
       {
-        header: 'Last',
+        header: 'About Us',
+        items: [{
+          background: background5,
+          logo: penguin,
+          name: 'fifth',
+          content: "Remember, remember the fifth of november",
+          type: 'media'
+        }]
+      },
+      {
+        header: 'Contact Us',
         items: [{
           background: background5,
           logo: penguin,
