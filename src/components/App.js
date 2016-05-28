@@ -18,8 +18,15 @@ const MenuSection = function(props){
     return ( <li key={item.name}><a href={`#${item.name}`}>{item.name}</a></li> )
   })
 
+  let key = props.items[0].name
+  
   return (
-    <ul id="sub-menu"><div class="sub-menu">{props.header}</div>
+    <ul id="sub-menu">
+      <div class="sub-menu">
+        <a href={`#${key}`} key={key}> 
+          {props.header}
+        </a>
+      </div>
       {items}
     </ul>
   )
