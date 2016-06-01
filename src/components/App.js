@@ -17,9 +17,24 @@ const MenuSection = function(props){
   let items = props.items.map(item => {
     return ( <li key={item.name}><a href={`#${item.name}`}>{item.name}</a></li> )
   })
-
+  
+  
+  //link to main if available, if not link to first item
+  let key = ''
+  
+  if (props.main) {
+    key = props.main.name
+  } else if (props.items.length) {
+    key = props.items[0].name
+  }
+  
   return (
-    <ul id="sub-menu"><div class="sub-menu">{props.header}</div>
+    <ul id="sub-menu">
+      <div class="sub-menu">
+        <a href={`#${key}`} key={key}> 
+          {props.header}
+        </a>
+      </div>
       {items}
     </ul>
   )
@@ -51,6 +66,7 @@ class App extends React.Component{
     const sections = this.sections = [
       {
         header: 'Penguin',
+        main : '',
         items:[{
           background: background1,
           logo: penguin,
@@ -60,6 +76,7 @@ class App extends React.Component{
       },
       {
         header: 'Startups',
+        main : '',
         items: [{
             background: background1,
             logo: penguin,
@@ -79,39 +96,38 @@ class App extends React.Component{
       },
       {
         header: 'Opensource',
+        main : '',
         items: [{
           background: background3,
           logo: penguin,
           name: 'Honeybadger',
           content: "Penguins can fly, in the ocean",
-          type: 'media'
         }, {
           background: background4,
           logo: redButt,
           name: 'Hackable',
           content: "I like big butts and I cannot lie",
-          type: 'media'
         }]
       },
       {
         header: 'About Us',
-        items: [{
+        main : {
           background: background5,
           logo: penguin,
           name: 'fifth',
           content: "Remember, remember the fifth of november",
-          type: 'media'
-        }]
+        },
+        items: []
       },
       {
         header: 'Contact Us',
-        items: [{
+        main : {
           background: background5,
           logo: penguin,
           name: 'fifth',
           content: "Remember, remember the fifth of november",
-          type: 'media'
-        }]
+        },
+        items: []
       }
     ]
 
@@ -125,7 +141,19 @@ class App extends React.Component{
         </ul>
         <div ref="fullpage">
           {sections.map( section => {
-            return (section.items.map( item => <Item item={item} /> ))
+            let items = [];
+            
+            //how to i concatenate these components together in return
+            console.log(section.main)
+            if (section.main) {
+              console.log(section.main)
+              items.push(<Item item={section.main} />)
+            }
+            if (section.items.length){
+              items.push(section.items.map( item => <Item item={item} />))
+            }
+            
+            return items
           })}
         </div>
       </div>
