@@ -26,7 +26,6 @@ body{
 
 #menu{
     position: fixed;
-    top:10px;
     left:0;
     z-index: 99;
     font-size: 1.6rem;
@@ -34,7 +33,7 @@ body{
     padding-left: 5rem;
 }
 #menu h1 {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 #menu ul{
     padding-left: 0rem;

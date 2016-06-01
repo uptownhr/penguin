@@ -22,13 +22,9 @@ import grizzly from '../resources/grizzly.png'
 const MenuSection = function(props){
   let head = props.header;
   let items = props.items.map(item => {
-    if (head != 'ABOUT' && head != 'CONTACT') {
-      return (<li key={item.name}>
-        <div className="sub-menu"><a href={`#${item.name}`}>{item.name}</a></div>
-      </li> )
-    } else {
-      return null;
-    }
+    return (<li key={item.name}>
+      <a href={`#${item.name}`}>{item.name}</a>
+    </li> )
   })
 
   //link to main if available, if not link to first item
@@ -73,20 +69,20 @@ class App extends React.Component{
 
 
   render(){
+    const main_section = {
+      header: 'PENGUIN WEB',
+      main : {
+        background: background1,
+        logo: penguin,
+        name: 'Penguin',
+        tag: 'Penguin Interactive Unit',
+        content: 'Fly like an Eagle, but Swim like a Penguin'
+      },
+      items:[]
+    }
     const sections = this.sections = [
       {
-        header: 'Penguin',
-        main : '',
-        items:[{
-          background: background1,
-          logo: penguin,
-          name: 'Penguin',
-          tag: 'Penguin Interactive Unit',
-          content: 'Fly like an Eagle, but Swim like a Penguin'
-        }]
-      },
-      {
-        header: 'Startups',
+        header: 'STARTUPS',
         main : '',
         items: [{
             background: background1,
@@ -112,7 +108,7 @@ class App extends React.Component{
         }]
       },
       {
-        header: 'Opensource',
+        header: 'OPENSOURCE',
         main : '',
         items: [{
           background: background3,
@@ -127,7 +123,7 @@ class App extends React.Component{
         }]
       },
       {
-        header: 'About Us',
+        header: 'ABOUT US',
         main : {
           background: background5,
           logo: penguin,
@@ -137,7 +133,7 @@ class App extends React.Component{
         items: []
       },
       {
-        header: 'Contact Us',
+        header: 'CONTACT US',
         main : {
           background: background5,
           logo: grizzly,
@@ -151,29 +147,30 @@ class App extends React.Component{
     return (
       <div>
         <ul id="menu">
-          <h1>Penguin</h1>
-            <br>
-              </br>
-            {sections.map( (section,index) => <MenuSection key={index} {...section} />) }
-          <br>
-            </br>
+          <h1>
+            <a href='#Penguin'>{main_section.header}</a>
+          </h1>
+          {sections.map( (section,index) => <MenuSection key={index} {...section} />) }
         </ul>
         <div ref="fullpage">
-          {sections.map( section => {
-            let items = [];
-            
-            if (section.main) {
-              items.push(<Item item={section.main} />)
-            }
-            if (section.items.length){
-              items.push(section.items.map( item => <Item item={item} />))
-            }
-            
-            return items
-          })}
+          {this.getSectionItems(main_section)}
+          {sections.map( section => this.getSectionItems(section))}
         </div>
       </div>
     )
+  }
+
+  getSectionItems(section){
+    let items = [];
+
+    if (section.main) {
+      items.push(<Item item={section.main} />)
+    }
+    if (section.items.length){
+      items.push(section.items.map( item => <Item item={item} />))
+    }
+
+    return items
   }
 }
 
