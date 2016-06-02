@@ -1,176 +1,44 @@
 import React from 'react'
-import $ from 'jquery'
-import fullpage from 'fullpage.js'
+
+import Pages from './Pages'
 
 import './main.css'
 
-import background1 from './background1.svg'
-import background2 from './background2.svg'
-import background3 from './background3.svg'
-import background4 from './background4.svg'
-import background5 from './background.svg'
-
-import amplfy from '../resources/amplfy.png'
-import penguin from '../resources/logo-white.png'
-import stiqr from '../resources/stiqr.png'
-import hackable from '../resources/hackable.png'
-import honeybadger from '../resources/honeyBadger.png'
-import startupTabs from '../resources/startupTabs.png'
-import darkBoy from '../resources/darkBoy.png'
-import grizzly from '../resources/grizzly.png'
-
-const MenuSection = function(props){
-  let head = props.header;
-  let items = props.items.map(item => {
-    return (<li key={item.name}>
-      <a href={`#${item.name}`}>{item.name}</a>
-    </li> )
-  })
-
-  //link to main if available, if not link to first item
-  let key = ''
-  
-  if (props.main) {
-    key = props.main.name
-  } else if (props.items.length) {
-    key = props.items[0].name
-  }
+const Menu = function(){
   
   return (
-    <ul id="sub-menu">
-      <div class="sub-menu">
-        <a href={`#${key}`} key={key}> 
-          {props.header}
-        </a>
-      </div>
-      {items}
+    <ul id="menu">
+      <h1><a href="#Penguin">PENGUIN WEB</a></h1>
+      <ul id="sub-menu">
+        <div><a href="#Stiqr">STARTUPS</a></div>
+        <li><a href="#Stiqr">Stiqr</a></li>
+        <li><a href="#Startuptabs">Startuptabs</a></li>
+        <li><a href="#Amplfy">Amplfy</a></li>
+      </ul>
+      <ul id="sub-menu">
+        <div><a href="#Honeybadger">OPENSOURCE</a></div>
+        <li><a href="#Honeybadger">Honeybadger</a></li>
+        <li><a href="#Hackable">Hackable</a></li>
+      </ul>
+      <ul id="sub-menu">
+        <div><a href="#About">ABOUT US</a></div>
+      </ul>
+      <ul id="sub-menu">
+        <div><a href="#Contact">CONTACT US</a></div>
+      </ul>
     </ul>
   )
 }
 
-const Item = function(props){
-  const item = props.item
-
-  return (<div data-anchor={item.name} key={item.name} className="section" style={{backgroundSize: 'cover', backgroundImage: 'url(' + item.background + ')'}}>
-    <div class="site-container">
-      <img class="site-logo" src={item.logo} alt="show me picture"></img>
-      <h2> {item.name} </h2>
-      <p> {item.content} </p>
-    </div>
-  </div>)
-}
-
 class App extends React.Component{
-  componentDidMount(){
-    $(this.refs.fullpage).fullpage({
-      menu: '#menu'
-    })
-  }
-
 
   render(){
-    const main_section = {
-      header: 'PENGUIN WEB',
-      main : {
-        background: background1,
-        logo: penguin,
-        name: 'Penguin',
-        tag: 'Penguin Interactive Unit',
-        content: 'Fly like an Eagle, but Swim like a Penguin'
-      },
-      items:[]
-    }
-    const sections = this.sections = [
-      {
-        header: 'STARTUPS',
-        main : '',
-        items: [{
-            background: background1,
-            logo: stiqr,
-            name: 'Stiqr',
-            tag: 'Stiq it to the MAN!',
-            content: "Just stiq it!",
-            url: "http://www.stiqr.com/"
-          }, {
-          background: background2,
-          logo: startupTabs,
-          name: 'Startuptabs',
-          tag: 'Listing for Startups',
-          content: "Get the word out about your new Start Up!",
-          url: 'http://www.startuptabs.com/'
-        }, {
-          background: background2,
-          logo: amplfy,
-          name: 'Amplfy',
-          tag: 'Amplfy Your Online Presence',
-          content: "Just another Social Network Platform",
-          url: 'https://www.amplfy.me/'
-        }]
-      },
-      {
-        header: 'OPENSOURCE',
-        main : '',
-        items: [{
-          background: background3,
-          logo: honeybadger,
-          name: 'Honeybadger',
-          content: "Penguins can fly, in the ocean",
-        }, {
-          background: background4,
-          logo: hackable,
-          name: 'Hackable',
-          content: "I like big butts and I cannot lie",
-        }]
-      },
-      {
-        header: 'ABOUT US',
-        main : {
-          background: background5,
-          logo: penguin,
-          name: 'fifth',
-          content: "Remember, remember the fifth of november",
-        },
-        items: []
-      },
-      {
-        header: 'CONTACT US',
-        main : {
-          background: background5,
-          logo: grizzly,
-          name: 'Contact',
-          content: "Remember, remember the fifth of november",
-        },
-        items: []
-      }
-    ]
-
     return (
       <div>
-        <ul id="menu">
-          <h1>
-            <a href='#Penguin'>{main_section.header}</a>
-          </h1>
-          {sections.map( (section,index) => <MenuSection key={index} {...section} />) }
-        </ul>
-        <div ref="fullpage">
-          {this.getSectionItems(main_section)}
-          {sections.map( section => this.getSectionItems(section))}
-        </div>
+        <Menu />
+        <Pages />
       </div>
     )
-  }
-
-  getSectionItems(section){
-    let items = [];
-
-    if (section.main) {
-      items.push(<Item item={section.main} />)
-    }
-    if (section.items.length){
-      items.push(section.items.map( item => <Item item={item} />))
-    }
-
-    return items
   }
 }
 
