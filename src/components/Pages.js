@@ -119,20 +119,76 @@ const Hackable = function(){
   )
 }
 
-const About = function(){
-  return (
-    <div
-      data-anchor="About"
-      key="About"
-      className="section"
-      style={{backgroundSize: 'cover', backgroundImage: 'url(' + background5 + ')'}}>
-      <div class="site-container">
-        <h2>About</h2>
-        <p>Meet the team</p>
+class About extends React.Component{
+  constructor(props){
+    super(props)
+
+    this.state = {
+      active_profile: {
+        name: 'james',
+        title: 'ceo',
+        description: 'blah blah blah'
+      },
+      profiles: [
+        {
+          name: 'james',
+          title: 'ceo',
+          description: 'blah blah blah'
+        },
+        {
+          name: 'dennis',
+          title: 'dev',
+          description: 'har har har'
+        },
+        {
+          name: 'cat',
+          title: 'madre',
+          description: 'huh?'
+        }
+      ]
+    }
+  }
+
+  changeProfile(profile){
+    this.setState({
+      active_profile: profile
+    })
+  }
+
+  profile(profile){
+    return (
+      <div>
+        {profile.name}
+        {profile.title}
+        {profile.description}
       </div>
-    </div>
-  )
+
+    )
+  }
+
+  render(){
+    return (
+      <div
+        data-anchor="About"
+        key="About"
+        className="section"
+        style={{backgroundSize: 'cover', backgroundImage: 'url(' + background5 + ')'}}>
+        <div class="site-container">
+          <h2>About</h2>
+          <p>Meet the team</p>
+          <ul>
+            {this.state.profiles.map( profile => (
+              <li onClick={this.changeProfile.bind(this, profile)}>{profile.name}</li>
+            ))}
+          </ul>
+
+          {this.profile(this.state.active_profile)}
+        </div>
+      </div>
+    )
+  }
 }
+
 
 const Contact = function(){
   return (
