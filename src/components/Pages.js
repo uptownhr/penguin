@@ -17,6 +17,23 @@ import startupTabs from '../resources/startupTabs.png'
 import darkBoy from '../resources/darkBoy.png'
 import grizzly from '../resources/grizzly.png'
 
+const Penguin = function(){
+
+  return (
+    <div
+      data-anchor="Penguin"
+      key="Penguin"
+      className="section"
+      style={{backgroundSize: 'cover', backgroundImage: 'url(' + background1 + ')'}}>
+      <div class="site-container">
+        <img class="site-logo" src={stiqr} alt="show me picture"></img>
+        <h2>Penguin</h2>
+        <p>This is antartica</p>
+      </div>
+    </div>
+  )
+}
+
 const Stiqr = function(){
 
   return (
@@ -143,6 +160,7 @@ class Pages extends React.Component {
   render() {
     return (
       <div ref="fullpage">
+        <Penguin />
         <Stiqr />
         <Startuptabs />
         <Amplfy />
