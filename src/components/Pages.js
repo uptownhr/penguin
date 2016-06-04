@@ -8,6 +8,12 @@ import background3 from './background3.svg'
 import background4 from './background4.svg'
 import background5 from './background.svg'
 
+import mocat from '../resources/mocat.jpg'
+import james from '../resources/james.jpg'
+import dennis from '../resources/dennis.jpg'
+import vik from '../resources/vik.jpg'
+import stewie from '../resources/Stewiepolice.png'
+
 import amplfy from '../resources/amplfy.png'
 import penguin from '../resources/logo-white.png'
 import stiqr from '../resources/stiqr.png'
@@ -17,6 +23,9 @@ import startupTabs from '../resources/startupTabs.png'
 import darkBoy from '../resources/darkBoy.png'
 import grizzly from '../resources/grizzly.png'
 
+const {Grid, Row, Col} = require('react-flexbox-grid');
+
+
 const Penguin = function(){
 
   return (
@@ -25,8 +34,8 @@ const Penguin = function(){
       key="Penguin"
       className="section"
       style={{backgroundSize: 'cover', backgroundImage: 'url(' + background1 + ')'}}>
-      <div class="site-container">
-        <img class="site-logo" src={stiqr} alt="show me picture"></img>
+      <div className="site-container">
+        <img class="site-logo" src={penguin} alt="show me picture"></img>
         <h2>Penguin</h2>
         <p>This is antartica</p>
       </div>
@@ -42,7 +51,7 @@ const Stiqr = function(){
       key="Stiqr"
       className="section"
       style={{backgroundSize: 'cover', backgroundImage: 'url(' + background1 + ')'}}>
-      <div class="site-container">
+      <div className="site-container">
         <img class="site-logo" src={stiqr} alt="show me picture"></img>
         <h2>Stiqr</h2>
         <p>Just stiq it!</p>
@@ -59,7 +68,7 @@ const Startuptabs = function(){
       key="Startuptabs"
       className="section"
       style={{backgroundSize: 'cover', backgroundImage: 'url(' + background2 + ')'}}>
-      <div class="site-container">
+      <div className="site-container">
         <img class="site-logo" src={startupTabs} alt="show me picture"></img>
         <h2>Startuptabs</h2>
         <p>Get the word out about your new Start Up!</p>
@@ -76,7 +85,7 @@ const Amplfy = function(){
       key="Amplfy"
       className="section"
       style={{backgroundSize: 'cover', backgroundImage: 'url(' + background2 + ')'}}>
-      <div class="site-container">
+      <div className="site-container">
         <img class="site-logo" src={amplfy} alt="show me picture"></img>
         <h2>Amplfy</h2>
         <p>Just another Social Network Platform</p>
@@ -93,7 +102,7 @@ const Honeybadger = function(){
       key="Honeybadger"
       className="section"
       style={{backgroundSize: 'cover', backgroundImage: 'url(' + background3 + ')'}}>
-      <div class="site-container">
+      <div className="site-container">
         <img class="site-logo" src={honeybadger} alt="show me picture"></img>
         <h2>Honeybadger</h2>
         <p>Penguins can fly, in the ocean</p>
@@ -110,7 +119,7 @@ const Hackable = function(){
       key="Hackable"
       className="section"
       style={{backgroundSize: 'cover', backgroundImage: 'url(' + background4 + ')'}}>
-      <div class="site-container">
+      <div className="site-container">
         <img class="site-logo" src={hackable} alt="show me picture"></img>
         <h2>Hackable</h2>
         <p>I like big butts and I cannot lie</p>
@@ -119,31 +128,69 @@ const Hackable = function(){
   )
 }
 
+const App = React.createClass({
+  render() {
+    return (
+      <Grid>
+        <Row>
+          <Col xs={6} md={3}>Hello, world!</Col>
+        </Row>
+      </Grid>
+    );
+  }
+});
+
 class About extends React.Component{
   constructor(props){
     super(props)
 
     this.state = {
       active_profile: {
-        name: 'james',
+        name: 'JAMES',
+        photo: james,
         title: 'ceo',
-        description: 'blah blah blah'
+        description: 'James employs Lee near her economy. James rockets. James edits Lee beside an' +
+        ' inhabitant. The prayer pants above the idiotic husband. Lee mutters across the calculated ' +
+        'trend. Lee skips James underneath the several gender.'
       },
       profiles: [
         {
-          name: 'james',
-          title: 'ceo',
-          description: 'blah blah blah'
+          name: 'JAMES',
+          photo: james,
+          title: 'CEO',
+          description: 'James employs Lee near her economy. James rockets. James edits Lee beside an' +
+          ' inhabitant. The prayer pants above the idiotic husband. Lee mutters across the calculated ' +
+          'trend. Lee skips James underneath the several gender.'
         },
         {
-          name: 'dennis',
-          title: 'dev',
-          description: 'har har har'
+          name: 'DENNIS',
+          photo: dennis,
+          title: 'JS DEV',
+          description: 'The interim freeway worships davis. Dennis balances this discouraging' +
+          ' gulf. Under the ritual yawns the ash. Dennis compacts davis.'
         },
         {
-          name: 'cat',
-          title: 'madre',
-          description: 'huh?'
+          name: 'CAT',
+          photo: mocat,
+          title: 'PHP DEV',
+          description: 'Cat pinches vik beside the happier cousin. Without a book breaks cat.' +
+          ' Why can\'t cat replace its sexist? Cat faints below a worthwhile pedant.?'
+        },
+        {
+          name: 'VIK',
+          photo: vik,
+          title: 'PROFESSOR of JS/CSS/HTML',
+          description: 'vik pushes his car to go to the bernie sander\'s rally in Anaheim.' +
+            ' Cuz love is such an old fashion word and love dares you to care for the people' +
+            ' on the edge of the night and love dares you to change our ways of caring about' +
+            ' ourselves.'
+        },
+        {
+          name: 'STEWIE',
+          photo: stewie,
+          title: 'World Conquoror',
+          description: 'She packed my bags, last night, pre flight... 9 am... and i\'m gonna be' +
+            ' as high as a kite by then.'
         }
       ]
     }
@@ -157,10 +204,19 @@ class About extends React.Component{
 
   profile(profile){
     return (
-      <div>
-        {profile.name}
-        {profile.title}
-        {profile.description}
+      <div id="bio-shot" className="bio-shots-details">
+        <div id="bio-image">
+          <Row>
+            <Col xs={4}><img src={profile.photo} alt="image of cat"></img></Col>
+            <Col xs={8}>
+              <div className="bio-content">
+                <h1>{profile.name}</h1>
+                <h2>{profile.title}</h2>
+                <p>{profile.description}</p>
+              </div>
+            </Col>
+          </Row>
+        </div>
       </div>
 
     )
@@ -172,15 +228,28 @@ class About extends React.Component{
         data-anchor="About"
         key="About"
         className="section"
-        style={{backgroundSize: 'cover', backgroundImage: 'url(' + background5 + ')'}}>
-        <div class="site-container">
-          <h2>About</h2>
-          <p>Meet the team</p>
-          <ul>
+        style={{backgroundSize: 'cover', backgroundColor: 'grey'}}>
+        <div className="about-container">
+          <div className="bio-shots">
+            <Row>
             {this.state.profiles.map( profile => (
-              <li onClick={this.changeProfile.bind(this, profile)}>{profile.name}</li>
+              <Col id="blah" xs>
+              <div className="bio-shot" onClick={this.changeProfile.bind(this, profile)}>
+                <img className="bio-photo" src={profile.photo} alt="picture of a cat"></img>
+                <br></br>
+
+                <br></br>
+                <p>{profile.name}</p>
+                <br></br>
+                <p>{profile.title}</p>
+
+              </div>
+                </Col>
             ))}
-          </ul>
+            </Row>
+          </div>
+          <br>
+            </br>
 
           {this.profile(this.state.active_profile)}
         </div>
@@ -197,7 +266,7 @@ const Contact = function(){
       key="Contact"
       className="section"
       style={{backgroundSize: 'cover', backgroundImage: 'url(' + background5 + ')'}}>
-      <div class="site-container">
+      <div className="site-container">
         <h2>Contact</h2>
         <p>Please contact us</p>
       </div>
