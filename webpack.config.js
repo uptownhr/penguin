@@ -21,7 +21,12 @@ module.exports = {
         include: path.join(__dirname, 'src')
       },
       { test: /\.scss$/, loaders: ["style", "css", "sass"] },
-      { test: /\.css$/, loader: "style!css" },
+      {
+        test: /\.css$/,
+        loader: 'style!css?modules',
+        include: /flexboxgrid/,
+      },
+      { test: /\.css$/, loader: "style!css", exclude: /flexboxgrid/ },
       { test: /\.png|svg|jpg$/, loader: 'url-loader?limit=1024' },
       { test: /\.(otf|eot|ttf|woff|woff2)$/, loader: 'file' }
     ]
