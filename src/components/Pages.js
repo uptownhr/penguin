@@ -128,18 +128,6 @@ const Hackable = function(){
   )
 }
 
-const App = React.createClass({
-  render() {
-    return (
-      <Grid>
-        <Row>
-          <Col xs={6} md={3}>Hello, world!</Col>
-        </Row>
-      </Grid>
-    );
-  }
-});
-
 class About extends React.Component{
   constructor(props){
     super(props)
