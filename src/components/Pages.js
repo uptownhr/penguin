@@ -218,10 +218,10 @@ class About extends React.Component{
         className="section"
         style={{backgroundSize: 'cover', backgroundColor: 'grey'}}>
         <div className="about-container">
-          <div className="bio-shots">
-            <Row>
+
+            <Row style={{borderBottomWidth: '1px'}}>
             {this.state.profiles.map( profile => (
-              <Col id="blah" xs>
+              <Col id="blah" xs={5} sm={4} md={3} lg={2}>
               <div className="bio-shot" onClick={this.changeProfile.bind(this, profile)}>
                 <img className="bio-photo" src={profile.photo} alt="picture of a cat"></img>
                 <br></br>
@@ -235,11 +235,11 @@ class About extends React.Component{
                 </Col>
             ))}
             </Row>
-          </div>
-          <br>
-            </br>
 
-          {this.profile(this.state.active_profile)}
+
+          <Row>
+            {this.profile(this.state.active_profile)}
+          </Row>
         </div>
       </div>
     )
