@@ -3,6 +3,7 @@ import React from 'react'
 import Pages from './Pages'
 
 import './main.css'
+import './grid.css'
 
 const Menu = function(){
   
