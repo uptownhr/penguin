@@ -7,6 +7,7 @@ import background2 from './background2.svg'
 import background3 from './background3.svg'
 import background4 from './background4.svg'
 import background5 from './background.svg'
+import startuptabsbg from './background1.svg'
 
 import mocat from '../resources/mocat.jpg'
 import james from '../resources/james.jpg'
@@ -19,7 +20,7 @@ import penguin from '../resources/logo-white.png'
 import stiqr from '../resources/stiqr.png'
 import hackable from '../resources/hackable.png'
 import honeybadger from '../resources/honeyBadger.png'
-import startupTabs from '../resources/startupTabs.png'
+import startupTabs from '../resources/startuptabs_w.png'
 import darkBoy from '../resources/darkBoy.png'
 import grizzly from '../resources/grizzly.png'
 
@@ -35,8 +36,8 @@ const Penguin = function(){
       style={{backgroundSize: 'cover', backgroundImage: 'url(' + background1 + ')'}}>
       <div className="site-container" style={{marginBottom: '120px'}}>
         <img class="site-logo" src={penguin} alt="show me picture"></img>
-        <h2 style={{fontSize: '6rem'}}>Penguin Web</h2>
-        <p>This is antartica</p>
+        <h2 style={{fontSize: '6rem'}}>PENGUIN WEB</h2>
+        <p>RAPID PROTOTYPING SERVICES FOR STARTUPS.</p>
       </div>
     </div>
   )
@@ -52,8 +53,10 @@ const Stiqr = function(){
       style={{backgroundSize: 'cover', backgroundImage: 'url(' + background3 + ')'}}>
       <div className="site-container">
         <img class="site-logo" src={stiqr} alt="show me picture"></img>
-        <h2>Stiqr</h2>
-        <p>Just stiq it!</p>
+        <h2>No Code. Just Stick It!</h2>
+        <p>Design your website just as you do with Photoshop, directly from your website, live.</p>
+        <a href="http://www.stiqr.com" className="button">Visit <i className="fa fa-lg fa-angle-right" aria-hidden="true"></i></a>
+
       </div>
     </div>
   )
@@ -66,11 +69,11 @@ const Startuptabs = function(){
       data-anchor="Startuptabs"
       key="Startuptabs"
       className="section"
-      style={{backgroundSize: 'cover', backgroundImage: 'url(' + background2 + ')'}}>
+      style={{backgroundSize: 'cover', backgroundImage: 'url(' + startuptabsbg + ')'}}>
       <div className="site-container">
         <img class="site-logo" src={startupTabs} alt="show me picture"></img>
-        <h2>Startuptabs</h2>
-        <p>Get the word out about your new Start Up!</p>
+        <h2>Startup Discovery Engine</h2>
+        <p>Startuptabs helps you discover your startup! Fresh and exciting startups with every new tab.</p>
       </div>
     </div>
   )
@@ -249,7 +252,9 @@ const Contact = function(){
       key="Contact"
       className="section"
       style={{backgroundSize: 'cover', backgroundImage: 'url(' + background1 + ')'}}>
-      <iframe id="typeform-full" width="100%" height="100%" frameborder="0" src="https://startuptabs.typeform.com/to/Ls52J1"></iframe>
+
+        <iframe style={{position:'relative', zIndex:'2'}}id="typeform-full" width="100%" height="100%" frameborder="0" src="https://startuptabs.typeform.com/to/Ls52J1"></iframe>
+
     </div>
   )
 }
