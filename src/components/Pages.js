@@ -49,7 +49,7 @@ const Stiqr = function(){
       data-anchor="Stiqr"
       key="Stiqr"
       className="section"
-      style={{backgroundSize: 'cover', backgroundImage: 'url(' + background1 + ')'}}>
+      style={{backgroundSize: 'cover', backgroundImage: 'url(' + background3 + ')'}}>
       <div className="site-container">
         <img class="site-logo" src={stiqr} alt="show me picture"></img>
         <h2>Stiqr</h2>
@@ -122,6 +122,7 @@ const Hackable = function(){
         <img class="site-logo" src={hackable} alt="show me picture"></img>
         <h2>Hackable</h2>
         <p>I like big butts and I cannot lie</p>
+        <a className="button" href="http://hackable.penguin.ws">Testing</a>
       </div>
     </div>
   )
@@ -210,7 +211,7 @@ class About extends React.Component{
         data-anchor="About"
         key="About"
         className="section"
-        style={{backgroundSize: 'cover', backgroundColor: 'black'}}>
+        style={{backgroundSize: 'cover', backgroundImage: `url('${background1}')`}}>
         <div className="grid-container">
 
             <div className="row" style={{borderBottomWidth: '1px'}}>
@@ -247,12 +248,8 @@ const Contact = function(){
       data-anchor="Contact"
       key="Contact"
       className="section"
-      style={{backgroundSize: 'cover', backgroundColor: 'black'}}>
-      <div className="site-container">
-        <h2>Contact</h2>
-        <p>Please contact us</p>
-        <a href="https://startuptabs.typeform.com/to/Ls52J1">Button</a>
-      </div>
+      style={{backgroundSize: 'cover', backgroundImage: 'url(' + background1 + ')'}}>
+      <iframe id="typeform-full" width="100%" height="100%" frameborder="0" src="https://startuptabs.typeform.com/to/Ls52J1"></iframe>
     </div>
   )
 }
@@ -261,7 +258,28 @@ class Pages extends React.Component {
   
   componentDidMount(){
     $(this.refs.fullpage).fullpage({
-      menu: '#menu'
+      menu: '#menu',
+      afterLoad: function(link, index){
+        $('#menu a').removeClass('active')
+
+        if(index == 1) return false
+
+        var menuItems = $('#menu .sub-menu li a')
+        var menuItem = menuItems[index-2]
+        $(menuItem).addClass('active')
+
+        if(link == 'Contact'){
+          $('#menu').addClass('contact')
+          $('[href="#Contact"]').addClass('active')
+        }else{
+          $('#menu').removeClass('contact')
+        }
+
+        if(link == 'About'){
+          $('[href="#About"]').addClass('active')
+        }
+
+      }
     })
   }
   
