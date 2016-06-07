@@ -23,7 +23,6 @@ import startupTabs from '../resources/startupTabs.png'
 import darkBoy from '../resources/darkBoy.png'
 import grizzly from '../resources/grizzly.png'
 
-const {Grid, Row, Col} = require('react-flexbox-grid');
 
 
 const Penguin = function(){
@@ -194,19 +193,14 @@ class About extends React.Component{
     return (
       <div id="bio-shot" className="bio-shots-details">
         <div id="bio-image">
-          <Row>
-            <Col xs={4}><img src={profile.photo} alt="image of cat"></img></Col>
-            <Col xs={8}>
-              <div className="bio-content">
-                <h1>{profile.name}</h1>
-                <h2>{profile.title}</h2>
-                <p>{profile.description}</p>
-              </div>
-            </Col>
-          </Row>
+          <div className="col-1-5"><img src={profile.photo} alt="image of cat"></img></div>
+          <div className="bio-content col-6">
+              <h1>{profile.name}</h1>
+              <h2>{profile.title}</h2>
+              <p>{profile.description}</p>
+          </div>
         </div>
       </div>
-
     )
   }
 
@@ -216,12 +210,12 @@ class About extends React.Component{
         data-anchor="About"
         key="About"
         className="section"
-        style={{backgroundSize: 'cover', backgroundColor: 'grey'}}>
-        <div className="about-container">
+        style={{backgroundSize: 'cover', backgroundColor: 'black'}}>
+        <div className="grid-container">
 
-            <Row style={{borderBottomWidth: '1px'}}>
+            <div className="row" style={{borderBottomWidth: '1px'}}>
             {this.state.profiles.map( profile => (
-              <Col id="blah" xs={5} sm={4} md={3} lg={2}>
+              <div className="col-1-5">
               <div className="bio-shot" onClick={this.changeProfile.bind(this, profile)}>
                 <img className="bio-photo" src={profile.photo} alt="picture of a cat"></img>
                 <br></br>
@@ -232,14 +226,14 @@ class About extends React.Component{
                 <p>{profile.title}</p>
 
               </div>
-                </Col>
+                </div>
             ))}
-            </Row>
+            </div>
 
 
-          <Row>
+          <div className="row">
             {this.profile(this.state.active_profile)}
-          </Row>
+          </div>
         </div>
       </div>
     )

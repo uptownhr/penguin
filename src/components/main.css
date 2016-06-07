@@ -87,10 +87,9 @@ a:link, a:visited{
     text-align: center;
 }
 
-.about-container{
-    margin-top: 80px;
+.grid-container{
+    margin-top: 0px;
     margin-left: 250px;
-
 }
 
 .fp-tableCell .bio-shots {
@@ -111,7 +110,21 @@ a:link, a:visited{
 .bio-shot p {
     margin: 0px;
     font-size: 1.4rem;
+    text-align: center;
 
+}
+
+.bio-shot img{
+    display: block;
+    margin: 0 auto;
+}
+
+.bio-shot p{
+    width: 100px;
+}
+
+.bio-shot {
+    text-align: center;
 }
 
 .fp-tableCell .bio-photo {
