@@ -247,10 +247,11 @@ const Contact = function(){
       data-anchor="Contact"
       key="Contact"
       className="section"
-      style={{backgroundSize: 'cover', backgroundImage: 'url(' + background5 + ')'}}>
+      style={{backgroundSize: 'cover', backgroundColor: 'black'}}>
       <div className="site-container">
         <h2>Contact</h2>
         <p>Please contact us</p>
+        <a href="https://startuptabs.typeform.com/to/Ls52J1">Button</a>
       </div>
     </div>
   )
