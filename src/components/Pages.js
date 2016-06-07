@@ -215,19 +215,19 @@ class About extends React.Component{
         <div className="grid-container">
 
             <div className="row" style={{borderBottomWidth: '1px'}}>
-            {this.state.profiles.map( profile => (
-              <div className="col-1-5">
-              <div className="bio-shot" onClick={this.changeProfile.bind(this, profile)}>
-                <img className="bio-photo" src={profile.photo} alt="picture of a cat"></img>
-                <br></br>
+            {this.state.profiles.map( (profile, index) => (
+              <div key={index} className="col-1-5">
+                <div className="bio-shot" onClick={this.changeProfile.bind(this, profile)}>
+                  <img className="bio-photo" src={profile.photo} alt="picture of a cat"></img>
+                  <br></br>
 
-                <br></br>
-                <p>{profile.name}</p>
-                <br></br>
-                <p>{profile.title}</p>
+                  <br></br>
+                  <p>{profile.name}</p>
+                  <br></br>
+                  <p>{profile.title}</p>
 
-              </div>
                 </div>
+              </div>
             ))}
             </div>
 
