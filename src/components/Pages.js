@@ -20,6 +20,7 @@ import penguin from '../resources/logo-white.png'
 import stiqr from '../resources/stiqr.png'
 import hackable from '../resources/hackable.png'
 import honeybadger from '../resources/honeyBadger.png'
+
 import startupTabs from '../resources/startuptabs_w.png'
 import darkBoy from '../resources/darkBoy.png'
 import grizzly from '../resources/grizzly.png'
@@ -89,15 +90,14 @@ const Amplfy = function(){
       style={{backgroundSize: 'cover', backgroundImage: 'url(' + background2 + ')'}}>
       <div className="site-container">
         <img class="site-logo" src={amplfy} alt="show me picture"></img>
-        <h2>Amplfy</h2>
-        <p>Just another Social Network Platform</p>
+        <h2>Amplify your message</h2>
+        <p>Amplify your social reach through supporters. Syndicates retweet what you post through Amplfy. #itslouder™</p>
       </div>
     </div>
   )
 }
 
 const Honeybadger = function(){
-  
   return (
     <div
       data-anchor="Honeybadger"
@@ -107,7 +107,8 @@ const Honeybadger = function(){
       <div className="site-container">
         <img class="site-logo" src={honeybadger} alt="show me picture"></img>
         <h2>Honeybadger</h2>
-        <p>Penguins can fly, in the ocean</p>
+        <p>A hackathon starter built for simplicity</p>
+        <a href="https://github.com/jaequery/honeybadger" className="button">Github <i className="fa fa-lg fa-angle-right" aria-hidden="true"></i></a>
       </div>
     </div>
   )
@@ -123,9 +124,9 @@ const Hackable = function(){
       style={{backgroundSize: 'cover', backgroundImage: 'url(' + background4 + ')'}}>
       <div className="site-container">
         <img class="site-logo" src={hackable} alt="show me picture"></img>
-        <h2>Hackable</h2>
-        <p>I like big butts and I cannot lie</p>
-        <a className="button" href="http://hackable.penguin.ws">Testing</a>
+        <h2>Personal site starter for NodeJS developers</h2>
+        <p>Hackable comes pre-built with an admin that is easy to hack with your nodejs chops. Hackable keeps things familiar and uses libraries common to expressjs or koajs. No new API's to learn - no magic.</p>
+        <a className="button" href="http://github.com/uptownhr/hackable">Github <i className="fa fa-lg fa-angle-right" aria-hidden="true"></i></a>
       </div>
     </div>
   )
