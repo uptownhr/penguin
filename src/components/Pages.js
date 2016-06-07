@@ -267,6 +267,7 @@ class Pages extends React.Component {
       menu: '#menu',
       afterLoad: function(link, index){
         $('#menu a').removeClass('active')
+        $('#menu').removeClass('contact')
 
         if(index == 1) return false
 
@@ -277,8 +278,6 @@ class Pages extends React.Component {
         if(link == 'Contact'){
           $('#menu').addClass('contact')
           $('[href="#Contact"]').addClass('active')
-        }else{
-          $('#menu').removeClass('contact')
         }
 
         if(link == 'About'){
