@@ -252,9 +252,10 @@ const Contact = function(){
       data-anchor="Contact"
       key="Contact"
       className="section"
-      style={{backgroundSize: 'cover', backgroundImage: 'url(' + background1 + ')'}}>
-
-        <iframe style={{position:'relative', zIndex:'2'}}id="typeform-full" width="100%" height="100%" frameborder="0" src="https://startuptabs.typeform.com/to/Ls52J1"></iframe>
+      style={{backgroundSize: 'cover'}}>
+      <div className="typeform">
+        <iframe frameBorder="0" id="typeform-full" width="100%" height="100%" frameborder="0" src="https://startuptabs.typeform.com/to/Ls52J1"></iframe>
+      </div>
 
     </div>
   )

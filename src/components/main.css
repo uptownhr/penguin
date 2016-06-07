@@ -233,3 +233,9 @@ a:link, a:visited{
     -webkit-background-size: cover;
     background-size: cover;
 }
+
+.typeform{
+    background-color: white;
+    position: relative;
+    z-index: 99;
+}
