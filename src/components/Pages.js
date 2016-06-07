@@ -33,9 +33,9 @@ const Penguin = function(){
       key="Penguin"
       className="section"
       style={{backgroundSize: 'cover', backgroundImage: 'url(' + background1 + ')'}}>
-      <div className="site-container">
+      <div className="site-container" style={{marginBottom: '120px'}}>
         <img class="site-logo" src={penguin} alt="show me picture"></img>
-        <h2>Penguin</h2>
+        <h2 style={{fontSize: '6rem'}}>Penguin Web</h2>
         <p>This is antartica</p>
       </div>
     </div>
@@ -212,7 +212,7 @@ class About extends React.Component{
         key="About"
         className="section"
         style={{backgroundSize: 'cover', backgroundImage: `url('${background1}')`}}>
-        <div className="grid-container">
+        <div className="grid-container" style={{marginBottom: '120px'}}>
 
             <div className="row" style={{borderBottomWidth: '1px'}}>
             {this.state.profiles.map( (profile, index) => (
