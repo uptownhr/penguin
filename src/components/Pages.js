@@ -262,9 +262,9 @@ const Contact = function(){
 class Pages extends React.Component {
   
   componentDidMount(){
-    let $ = require('jquery')
-    let fullpage = require('fullpage.js')
-    $(this.refs.fullpage).fullpage({
+    let selector = this.refs.fullpage
+
+    $(selector).fullpage({
       menu: '#menu',
       afterLoad: function(link, index){
         $('#menu a').removeClass('active')
@@ -287,6 +287,8 @@ class Pages extends React.Component {
 
       }
     })
+
+
   }
   
   render() {

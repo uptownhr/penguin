@@ -1,17 +1,19 @@
 module.exports = function ({renderString, bundlePath, stylePath, stateString }) {
-  return `
-<html>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.0/jquery.fullPage.css" />
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+  return `<html>
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.fullpage/2.5.9/jquery.fullPage.min.css" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="${stylePath}" />
+  </head>
 
-<link rel="stylesheet" href="${stylePath}">
 <body>
-<div id='root'>${renderString}</div>
-<script>
-window.__INITIAL_STATE = ${stateString}
-</script>
-
-<script src="${bundlePath}"></script>
+  <div id='root'>${renderString}</div>
+  <script>
+  window.__INITIAL_STATE = ${stateString}
+  </script>
+  <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.fullpage/2.5.9/jquery.fullPage.min.js"></script>
+  <script src="${bundlePath}"></script>
 </body>
 </html>`
 }
