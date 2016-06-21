@@ -32,7 +32,7 @@ const Penguin = function(){
       data-anchor="Penguin"
       key="Penguin"
       className="section"
-      style={{backgroundSize: 'cover', backgroundImage: 'url(' + background1 + ')'}}>
+      style={{backgroundSize: 'cover', backgroundImage: 'url(' + background1 + ')', height: '100%'}}>
       <div className="site-container" style={{marginBottom: '120px'}}>
         <img className="site-logo" src={penguin} alt="show me picture"></img>
         <h2 style={{fontSize: '6rem'}}>PENGUIN WEB</h2>
