@@ -1,6 +1,4 @@
 import React from 'react'
-import $ from 'jquery'
-import fullpage from 'fullpage.js'
 
 import background1 from './background1.svg'
 import background2 from './background2.svg'
@@ -36,7 +34,7 @@ const Penguin = function(){
       className="section"
       style={{backgroundSize: 'cover', backgroundImage: 'url(' + background1 + ')'}}>
       <div className="site-container" style={{marginBottom: '120px'}}>
-        <img class="site-logo" src={penguin} alt="show me picture"></img>
+        <img className="site-logo" src={penguin} alt="show me picture"></img>
         <h2 style={{fontSize: '6rem'}}>PENGUIN WEB</h2>
         <p>RAPID PROTOTYPING SERVICES FOR STARTUPS.</p>
       </div>
@@ -53,7 +51,7 @@ const Stiqr = function(){
       className="section"
       style={{backgroundSize: 'cover', backgroundImage: 'url(' + background3 + ')'}}>
       <div className="site-container">
-        <img class="site-logo" src={stiqr} alt="show me picture"></img>
+        <img className="site-logo" src={stiqr} alt="show me picture"></img>
         <h2>No Code. Just Stick It!</h2>
         <p>Design your website just as you do with Photoshop, directly from your website, live.</p>
         <a href="http://www.stiqr.com" className="button">Visit <i className="fa fa-lg fa-angle-right" aria-hidden="true"></i></a>
@@ -72,7 +70,7 @@ const Startuptabs = function(){
       className="section"
       style={{backgroundSize: 'cover', backgroundImage: 'url(' + startuptabsbg + ')'}}>
       <div className="site-container">
-        <img class="site-logo" src={startupTabs} alt="show me picture"></img>
+        <img className="site-logo" src={startupTabs} alt="show me picture"></img>
         <h2>Startup Discovery Engine</h2>
         <p>Startuptabs helps you discover your startup! Fresh and exciting startups with every new tab.</p>
       </div>
@@ -89,7 +87,7 @@ const Amplfy = function(){
       className="section"
       style={{backgroundSize: 'cover', backgroundImage: 'url(' + background2 + ')'}}>
       <div className="site-container">
-        <img class="site-logo" src={amplfy} alt="show me picture"></img>
+        <img className="site-logo" src={amplfy} alt="show me picture"></img>
         <h2>Amplify your message</h2>
         <p>Amplify your social reach through supporters. Syndicates retweet what you post through Amplfy. #itslouder™</p>
       </div>
@@ -105,7 +103,7 @@ const Honeybadger = function(){
       className="section"
       style={{backgroundSize: 'cover', backgroundImage: 'url(' + background3 + ')'}}>
       <div className="site-container">
-        <img class="site-logo" src={honeybadger} alt="show me picture"></img>
+        <img className="site-logo" src={honeybadger} alt="show me picture"></img>
         <h2>Honeybadger</h2>
         <p>A hackathon starter built for simplicity</p>
         <a href="https://github.com/jaequery/honeybadger" className="button">Github <i className="fa fa-lg fa-angle-right" aria-hidden="true"></i></a>
@@ -123,7 +121,7 @@ const Hackable = function(){
       className="section"
       style={{backgroundSize: 'cover', backgroundImage: 'url(' + background4 + ')'}}>
       <div className="site-container">
-        <img class="site-logo" src={hackable} alt="show me picture"></img>
+        <img className="site-logo" src={hackable} alt="show me picture"></img>
         <h2>Personal site starter for NodeJS developers</h2>
         <p>Hackable comes pre-built with an admin that is easy to hack with your nodejs chops. Hackable keeps things familiar and uses libraries common to expressjs or koajs. No new API's to learn - no magic.</p>
         <a className="button" href="http://github.com/uptownhr/hackable">Github <i className="fa fa-lg fa-angle-right" aria-hidden="true"></i></a>
@@ -254,7 +252,7 @@ const Contact = function(){
       className="section"
       style={{backgroundSize: 'cover'}}>
       <div className="typeform">
-        <iframe frameBorder="0" id="typeform-full" width="100%" height="100%" frameborder="0" src="https://startuptabs.typeform.com/to/Ls52J1"></iframe>
+        <iframe frameBorder="0" id="typeform-full" width="100%" height="100%" src="https://startuptabs.typeform.com/to/Ls52J1"></iframe>
       </div>
 
     </div>
@@ -264,6 +262,8 @@ const Contact = function(){
 class Pages extends React.Component {
   
   componentDidMount(){
+    let $ = require('jquery')
+    let fullpage = require('fullpage.js')
     $(this.refs.fullpage).fullpage({
       menu: '#menu',
       afterLoad: function(link, index){
