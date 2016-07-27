@@ -90,7 +90,7 @@ const Amplfy = function(){
         <img className="site-logo" src={amplfy} alt="show me picture"></img>
         <h2>Amplify your message</h2>
           <p>Amplify your social reach through supporters. Syndicates retweet what you post through Amplfy. #itslouder™</p>
-          <a href="http://www.amplfy.com" className="button">Visit <i className="fa fa-lg fa-angle-right" aria-hidden="true"></i></a>	  	  
+          <a href="http://www.amplfy.co" className="button">Visit <i className="fa fa-lg fa-angle-right" aria-hidden="true"></i></a>	  	  
       </div>
     </div>
   )
