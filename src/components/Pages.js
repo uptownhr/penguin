@@ -55,7 +55,6 @@ const Stiqr = function(){
         <h2>No Code. Just Stick It!</h2>
         <p>Design your website just as you do with Photoshop, directly from your website, live.</p>
         <a href="http://www.stiqr.com" className="button">Visit <i className="fa fa-lg fa-angle-right" aria-hidden="true"></i></a>
-
       </div>
     </div>
   )
@@ -72,7 +71,8 @@ const Startuptabs = function(){
       <div className="site-container">
         <img className="site-logo" src={startupTabs} alt="show me picture"></img>
         <h2>Startup Discovery Engine</h2>
-        <p>Startuptabs helps you discover your startup! Fresh and exciting startups with every new tab.</p>
+          <p>Startuptabs helps you discover your startup! Fresh and exciting startups with every new tab.</p>
+          <a href="http://www.startuptabs.com" className="button">Visit <i className="fa fa-lg fa-angle-right" aria-hidden="true"></i></a>	  
       </div>
     </div>
   )
@@ -89,7 +89,8 @@ const Amplfy = function(){
       <div className="site-container">
         <img className="site-logo" src={amplfy} alt="show me picture"></img>
         <h2>Amplify your message</h2>
-        <p>Amplify your social reach through supporters. Syndicates retweet what you post through Amplfy. #itslouder™</p>
+          <p>Amplify your social reach through supporters. Syndicates retweet what you post through Amplfy. #itslouder™</p>
+          <a href="http://www.amplfy.com" className="button">Visit <i className="fa fa-lg fa-angle-right" aria-hidden="true"></i></a>	  	  
       </div>
     </div>
   )
