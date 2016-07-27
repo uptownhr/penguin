@@ -1,0 +1,5 @@
+www:
+  build: ./
+  environment:
+  - VIRTUAL_HOST=penguin.ws,www.penguin.ws
+  restart: always
