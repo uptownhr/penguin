@@ -163,9 +163,8 @@ class About extends React.Component{
         {
           name: 'CAT',
           photo: mocat,
-          title: 'PHP DEV',
-          description: 'Cat pinches vik beside the happier cousin. Without a book breaks cat.' +
-          ' Why can\'t cat replace its sexist? Cat faints below a worthwhile pedant.?'
+          title: 'Back\-End Developer',
+          description: 'Cat is a back\-end developer with a passion for Node. ' + 'She has an extensive background in LAMP development, technical writing, and eCommerce.'
         },
         {
           name: 'VIK',
